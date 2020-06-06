@@ -14,8 +14,6 @@ import javax.inject.Inject
 
 class SplashActivity : BaseActivity<SplashViewModel>() {
     private var Tag: String = SplashActivity::class.simpleName.toString()
-    val work: String? = null
-    private var test: String = "Splash"
 
 
     @Inject
@@ -27,18 +25,10 @@ class SplashActivity : BaseActivity<SplashViewModel>() {
     override fun provideLayoutId(): Int = R.layout.activity_splash
 
     override fun setupView(savedInstanceState: Bundle?) {
-        var l = test.let { it.toUpperCase() }
-
-        test.apply { test.length }
-
-        Log.d(Tag, "test " + test)
-        Log.d(Tag, "l " + l)
-        Log.d(Tag, "" + work)
-
-        Thread.sleep(10000)
-//        Handler().postDelayed(Runnable {
+      
+        Handler().postDelayed(Runnable {
             startActivity(Intent(applicationContext, LoginActivity::class.java))
-//        }, 3000)
+        }, 3000)
     }
 
     override fun getDependencies(activityComponent: ActivityComponent) {
